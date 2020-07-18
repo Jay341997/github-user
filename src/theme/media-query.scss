@@ -1,0 +1,92 @@
+// Sass Media Query Mixins! 
+// 
+//  Table of Contents :
+// 
+// 	1: x-desktop
+// 	2: desktop
+// 	3: tablet-landscape
+// 	4: tablet
+// 	5: mobile
+
+
+
+// xxLarge screens
+@mixin xxlarge {
+  /* min-width 1921px, xxlarge screens */
+  @media only screen and (min-width: 120.063em) {
+      @content;
+  }
+}
+
+// xLarge screens
+@mixin xlarge {
+  /* min-width 1441px, xlarge screens */
+  @media only screen and (min-width: 90.063em) {
+      @content;
+  }
+  /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+  @media only screen and (min-width: 90.063em) and (max-width: 120em) {
+      @content;
+  }
+}
+
+// Large screens
+@mixin large {
+  /* min-width 1025px, large screens */
+  @media only screen and (min-width: 64.063em) {
+      @content;
+  }
+  /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+  @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+      @content;
+  }
+}
+
+
+/* 
+##Device = Tablets, Ipads (portrait)
+##Screen = B/w 768px to 1024px
+*/
+@mixin ipad-p {
+  @media (min-width: 768px) and (max-width: 1024px)  {
+      @content;
+  }
+}
+
+/* 
+##Device = Tablets, Ipads (landscape)
+##Screen = B/w 768px to 1024px
+*/
+@mixin ipad-l {
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+      @content;
+  }
+}
+
+/* 
+##Device = Low Resolution Tablets, Mobiles (Landscape)
+##Screen = B/w 481px to 767px
+*/
+@mixin medium {
+   @media (min-width: 481px) and (max-width: 767px) {
+      @content;
+  }
+}
+
+// Small screens
+@mixin small {
+  
+  /* max-width 880px, mobile-only styles, use when QAing mobile issues */
+  @media only screen and (max-width: 50em) {
+      @content;
+  }
+}
+
+// Extra Small Screens
+@mixin extra-small {
+
+  /* max-width 320px, mobile-only styles, use when QAing mobile issues */
+  @media only screen and (max-width: 20em) {
+      @content;
+  }
+}

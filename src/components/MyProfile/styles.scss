@@ -1,0 +1,80 @@
+@import '../../theme/media-query.scss';
+
+.myProfileContainer {
+  .imgNameWrap {
+    @include small() {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .profileImg {
+      border-radius: 50%;
+      width: 100%;
+      @include small() {
+        width: 60px;
+        height: 60px;
+      }
+    }
+    .nameWrap {
+      padding: 16px 0;
+      @include small() {
+        margin-left: 24px;
+      }
+      .primary {
+        font-size: 26px;
+        line-height: 1.25;
+        font-weight: 600;
+        color: #24292e;
+      }
+      .userName {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 24px;
+        color: #666;
+      }
+    }
+  }
+  .aboutWrap {
+    .bio {
+      margin-bottom: 16px;
+    }
+    .followBtn {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+    .popularityInfo {
+      display: flex;
+      align-items: center;
+      margin: 16px 0;
+      cursor: pointer;
+      .popularityItem {
+        display: flex;
+        align-items: center;
+        color: #586069;
+        text-decoration: none;
+        strong {
+          margin: 0 4px;
+        }
+        &:hover {
+          color: #0366d6;
+          svg {
+            fill: #0366d6;
+          }
+        }
+      }
+    }
+    .extraInfoList {
+      .extraInfoItem {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        svg {
+          margin-right: 8px;
+          color: #6a737d;
+          fill: #6a737d;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@import './theme//media-query.scss';
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  @include small() {
+    flex-direction: column;
+    padding: 0;
+  }
+  .myProfileSection {
+    width: 25%;
+    padding: 16px;
+    @include small() {
+      width: 100%;
+      padding: 16px;
+    }
+  }
+  .myReposSection {
+    width: 75%;
+    padding: 16px;
+    @include small() {
+      width: 100%;
+      padding: 0;
+    }
+  }
+  .btn {
+    position: relative;
+    display: inline-block;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid;
+    border-radius: 6px;
+    appearance: none;
+    color: #24292e;
+    background-color: #fafbfc;
+    border-color: rgba(27,31,35,.15);
+    box-shadow: 0 1px 0 rgba(27,31,35,.04), inset 0 1px 0 hsla(0,0%,100%,.25);
+    transition: background-color .2s cubic-bezier(.3,0,.5,1);
+  }
+  
+}

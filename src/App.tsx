@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import './App.scss';
+import MyProfile from './components/MyProfile';
+import Repositories from './components/Repositories';
 
-function App() {
+interface Props {}
+const App: React.FC<Props> = (props) => {
+  const [userName, setUserName] = useState(""); 
+
+  useEffect(() => {
+    const user = window.location.pathname.slice(1);
+    if (user) {
+      setUserName(user);
+    } else {
+      window.location.replace(window.location.origin + '/Jay341997');
+      setUserName('Jay341997');
+    }
+  }, []);
+
+  if (!userName) {
+    return <></>
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section className="myProfileSection">
+        <MyProfile userName={userName} />
+      </section>
+      <section className="myReposSection">
+        <Repositories userName={userName} />
+      </section>
     </div>
   );
 }

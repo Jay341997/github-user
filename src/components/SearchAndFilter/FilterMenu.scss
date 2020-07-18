@@ -1,0 +1,82 @@
+.filterMenu {
+  margin-right: 8px;
+  .dropDownIcon {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    content: "";
+    border-top-style: solid;
+    border-top-width: 4px;
+    border-right: 4px solid transparent;
+    border-bottom: 0 solid transparent;
+    border-left: 4px solid transparent;
+    margin-left: 4px;
+  }
+  .selectMenu {
+    position: absolute;
+    top: auto;
+    bottom: auto;
+    right: auto;
+    left: auto;
+    z-index: 3;
+    background-color: #fff;
+    width: 300px;
+    height: auto;
+    max-height: 480px;
+    margin: 8px 0 16px;
+    font-size: 12px;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    .selectMenuHeader {
+      display: flex;
+      padding: 8px;
+      flex: none;
+      align-items: center;
+      border-bottom: 1px solid #eaecef;
+      .title {
+        flex: 1;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .closeIcon {
+        padding: 8px;
+        line-height: 1;
+        color: #959da5;
+        background-color: initial;
+        border: 0;
+        svg {
+          fill: #959da5;
+        }
+      }
+    }
+    .menuList {
+      .selectMenuItem {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 8px;
+        overflow: hidden;
+        color: #24292e;
+        text-align: left;
+        cursor: pointer;
+        background-color: #fff;
+        border: 0;
+        border-bottom: 1px solid #eaecef;
+        svg {
+          opacity: 0;
+          margin-right: 8px;
+        }
+        &.active {
+          svg {
+            opacity: 1;
+          }
+        }
+        &:hover {
+          background-color: #f6f8fa;
+        }
+      }
+    }
+  }
+}
